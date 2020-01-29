@@ -1,0 +1,10 @@
+n=int(input())
+s={}
+for i in range(n):
+    line=input().split()
+    name,marks=line[0],line[1:]
+    marks=list(map(float,marks))
+    s[name]=marks
+q=input()
+ans=s[q]
+print("{0:.2f}".format(sum(ans)/len(ans)))
