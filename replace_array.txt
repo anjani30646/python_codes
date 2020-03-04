@@ -1,0 +1,23 @@
+Given an array of integers, replace every element with the greatest element on the right 
+side in the array. Replace last element with 0 as there no element on the right side of it.
+
+Sample Input 0
+6
+6 7 4 3 5 2
+
+Sample Output 0
+7 5 5 5 2 0 
+
+
+n=int(input())
+a=list(map(int,input().split()))
+b=[0]*n
+
+max=0
+for i in range(len(a)-1,-1,-1):
+    b[i]=max
+    if(max<a[i]):
+        max=a[i]
+for i in range(len(b)):
+    print(b[i],end=" ")
+        

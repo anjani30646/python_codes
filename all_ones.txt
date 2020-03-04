@@ -1,0 +1,44 @@
+You are given a string of 1s and 0s only and a number K.
+Your task is to write a program that convert the given string to a string that consists of
+all 1s.
+But there's a catch. You are only allowed to use one kind of operation :
+Take exactly k consecutive elements of the string and apply the flip operation on every 
+element, ie. change 1 to 0 and 0 to 1.
+Each operation takes 1 second so you have to print the minimum time required to make the 
+string of 1's only. If not possible print -1.
+
+Sample Input 0
+3
+00010110 3
+11111 4
+01010 4
+
+Sample Output 0
+3
+0
+-1
+
+n=int(input())
+while n:
+    s,k=input().split()
+    k=int(k)
+    s=list(s)
+    c=0
+    c1=0
+    for i in range(len(s)-k+1):
+        if s[i]=='0':
+            c=c+1
+            for j in range(i,i+k):
+                if s[j]=='0':
+                    s[j]='1'
+                else:
+                    s[j]='0'
+    for i in range(len(s)):
+        if s[i]=='0':
+            c1=c1+1
+    #print(s)
+    if(c1>0):
+        print('-1')
+    else:
+        print(c)
+    n=n-1

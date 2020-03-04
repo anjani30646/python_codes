@@ -1,0 +1,32 @@
+Ques 2: Given a string of brackets (, ), {, }, [, ], find the position in the string where
+the orders of brackets breaks.
+
+I/p: ())
+O/p: 3 
+
+I/p: (){[]}(
+O/p: 8
+
+s=input()
+x1,x2,x3=0,0,0
+for i in range(len(s)):
+    if(s[i]=='{'):
+        x1=x1+1
+    if(s[i]=='('):
+        x2=x2+1
+    if(s[i]=='['):
+        x3=x3+1
+    if(s[i]=='}' and x1>0):
+        x1=x1-1
+    elif(s[i]=='}' and x1<=0):
+        break
+    if(s[i]==')' and x1>0):
+        x1=x1-1
+    elif(s[i]==')' and x1<=0):
+        break
+    if(s[i]==']' and x1>0):
+        x1=x1-1
+    elif(s[i]==']' and x1<=0):
+        break
+print(i+1)
+    
