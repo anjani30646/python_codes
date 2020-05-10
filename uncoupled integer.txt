@@ -1,0 +1,13 @@
+uncoupled integer
+
+input:
+1, 2, 3, 1, 2
+output:
+3
+
+code:
+a=list(map(int,input().split(',')))
+co=0
+for i in range(len(a)):
+    co=co^a[i]
+print(co)
