@@ -1,0 +1,31 @@
+longest substring with out repetition
+
+Input : GEEKSFORGEEKS
+Output : EKSFORG
+
+Input : ABDEFGABEF
+Output : BDEFGA
+
+
+s=input()
+l=len(s)
+s=s.lower()
+s1=""
+s2=""
+for i in range(l):
+    for j in range(i,l):
+        if s[j] not in s1:
+            s1=s1+s[j]
+        else:
+            if(len(s1)>len(s2)):
+                s2=s1
+                s1=""
+            break
+if(len(s2)>3):
+    print(s2)
+else:
+    print("-1")
+            
+        
+            
+        
